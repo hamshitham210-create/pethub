@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – PawFinds</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Paw<span>Finds</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="pets.html">Pets</a></li>
+      <li><a href="process.html">Adopt</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="pets.html" class="nav-cta">Find a Pet</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <p class="breadcrumb"><a href="index.html">Home</a> → Contact</p>
+    <p class="section-label">Get In Touch</p>
+    <h1 class="section-title">Contact Us</h1>
+    <p>Have questions? Want to partner with us? Or just want to say hello? We'd love to hear from you!</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <!-- INFO -->
+      <div class="contact-info">
+        <h3>We're Here for You 🐾</h3>
+        <p>Whether you have questions about a specific pet, the adoption process, or want to collaborate with us — don't hesitate to reach out!</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-item-title">Email Us</div>
+            <div class="contact-item-val">hello@pawfinds.in</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-title">Call Us</div>
+            <div class="contact-item-val">+91 98765 43210<br>(Mon–Sat, 9am–6pm)</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-title">Visit Us</div>
+            <div class="contact-item-val">No. 12, 4th Cross, Indiranagar<br>Bengaluru – 560038, Karnataka</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div>
+            <div class="contact-item-title">Office Hours</div>
+            <div class="contact-item-val">Monday – Saturday<br>9:00 AM to 6:00 PM</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <h4 style="color:var(--brown);font-size:0.9rem;margin-bottom:1rem;">Follow Us</h4>
+          <div class="footer-social">
+            <a href="#" class="social-icon" style="background:rgba(92,61,46,0.1);">📘</a>
+            <a href="#" class="social-icon" style="background:rgba(92,61,46,0.1);">📸</a>
+            <a href="#" class="social-icon" style="background:rgba(92,61,46,0.1);">🐦</a>
+            <a href="#" class="social-icon" style="background:rgba(92,61,46,0.1);">▶️</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <div class="form-card">
+          <div class="form-title">✉️ Send us a Message</div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Subject *</label>
+            <select>
+              <option value="">-- Select a Topic --</option>
+              <option>Adoption Enquiry</option>
+              <option>Pet Health / Welfare Concern</option>
+              <option>Partnership / Collaboration</option>
+              <option>Volunteer / Donate</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea placeholder="Write your message here..." style="min-height:140px;"></textarea>
+          </div>
+
+          <button class="btn btn-primary" style="width:100%;font-size:1rem;padding:1rem;" onclick="handleSubmit(this)">
+            Send Message ✉️
+          </button>
+        </div>
+
+        <!-- SUCCESS MESSAGE (hidden initially) -->
+        <div id="successMsg" style="display:none;background:rgba(122,158,126,0.12);border:1px solid var(--sage);border-radius:16px;padding:1.5rem;text-align:center;margin-top:1rem;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">✅</div>
+          <div style="font-weight:700;color:var(--sage);margin-bottom:0.3rem;">Message Sent!</div>
+          <p style="font-size:0.88rem;color:var(--text-muted);">Thank you for reaching out. We'll get back to you within 1–2 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP PLACEHOLDER -->
+  <section style="padding:0 5% 5rem;">
+    <div style="border-radius:24px;overflow:hidden;box-shadow:var(--shadow);height:300px;background:linear-gradient(135deg,#FDEBD0,#FAD4A6);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;">
+      <div style="font-size:3rem;">📍</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--brown);font-weight:700;">PawFinds HQ – Bengaluru</div>
+      <p style="color:var(--text-muted);font-size:0.9rem;">No. 12, 4th Cross, Indiranagar, Bengaluru – 560038</p>
+      <a href="https://maps.google.com" target="_blank" class="btn btn-outline" style="padding:0.5rem 1.3rem;font-size:0.88rem;">Open in Maps →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Paw<span>Finds</span></a>
+        <p>Connecting loving families with pets who need a second chance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pets.html">Pets Available</a></li>
+          <li><a href="process.html">Adoption Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="#">📧 hello@pawfinds.in</a></li>
+          <li><a href="#">📞 +91 98765 43210</a></li>
+          <li><a href="#">📍 Bengaluru, Karnataka</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PawFinds. All rights reserved.</span>
+      <span class="footer-tagline">🐾 Adopt, Don't Shop</span>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(btn) {
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawFinds – Adopt, Don't Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Extra cute touches just for homepage */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 1.6rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(92,61,46,0.08);
+      transition: all 0.35s ease;
+      border: 1.5px solid rgba(232,133,61,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      opacity: 0.05;
+      transition: all 0.5s;
+    }
+
+    .why-card:nth-child(1)::before { background: #7A9E7E; }
+    .why-card:nth-child(2)::before { background: #E8853D; }
+    .why-card:nth-child(3)::before { background: #F2A4A4; }
+    .why-card:nth-child(4)::before { background: #C5B8E8; }
+
+    .why-card:hover::before { width: 200px; height: 200px; bottom: -60px; right: -60px; opacity: 0.08; }
+    .why-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(92,61,46,0.14); }
+
+    .why-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .why-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.6rem;
+    }
+
+    .why-desc {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.65;
+    }
+
+    /* Cute paw divider */
+    .paw-divider {
+      text-align: center;
+      font-size: 1.2rem;
+      letter-spacing: 0.8rem;
+      opacity: 0.2;
+      margin: -1rem 0;
+    }
+
+    /* Wobble on hover for emoji pets */
+    .pet-card-img:hover { animation: wobble 0.5s ease; }
+
+    @keyframes wobble {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-3deg); }
+      75% { transform: rotate(3deg); }
+    }
+
+    /* Floating paw background decoration */
+    .section-paws {
+      position: absolute;
+      opacity: 0.04;
+      font-size: 6rem;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">Paw<span>Finds</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="pets.html">Pets</a></li>
+      <li><a href="process.html">Adopt</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="pets.html" class="nav-cta">Find a Pet 🐾</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">🐾 India's Trusted Adoption Platform</div>
+      <h1>Give a Pet a<br><em>Forever Home</em></h1>
+      <p>Every animal deserves love and a safe place to call home. Browse adorable pets waiting for their perfect family.</p>
+      <div class="hero-buttons">
+        <a href="pets.html" class="btn btn-primary">🐶 Adopt Now</a>
+        <a href="about.html" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Pets Adopted</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">120+</div>
+          <div class="stat-label">Happy Families</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Rescue Partners</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-img-wrap">
+        <div class="hero-circle">🐕</div>
+        <div class="hero-float-badge badge-1">🐱 Cats Available</div>
+        <div class="hero-float-badge badge-2">❤️ 100% Free Adoption</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PETS -->
+  <section>
+    <span class="section-paws" style="top:2rem;right:4%;">🐾</span>
+    <p class="section-label text-center">Browse Our Animals</p>
+    <h2 class="section-title text-center">Featured Pets</h2>
+    <p class="section-sub text-center">These lovable animals are looking for caring families. Could you be their perfect match?</p>
+
+    <div class="pets-grid">
+      <div class="pet-card">
+        <div class="pet-card-img"><span class="pet-tag">Dog</span>🐕</div>
+        <div class="pet-card-body">
+          <div class="pet-name">Bruno</div>
+          <div class="pet-breed">Labrador Retriever</div>
+          <div class="pet-meta">
+            <span class="pet-meta-item">🎂 2 years</span>
+            <span class="pet-meta-item">♂ Male</span>
+            <span class="pet-meta-item">📍 Bengaluru</span>
+          </div>
+          <p class="pet-desc">Friendly, energetic and loves to cuddle. Bruno is great with kids and other pets!</p>
+          <a href="contact.html" class="btn btn-primary adopt-btn">Adopt Me 🐾</a>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <div class="pet-card-img"><span class="pet-tag cat">Cat</span>🐈</div>
+        <div class="pet-card-body">
+          <div class="pet-name">Luna</div>
+          <div class="pet-breed">Persian Mix</div>
+          <div class="pet-meta">
+            <span class="pet-meta-item">🎂 1.5 years</span>
+            <span class="pet-meta-item">♀ Female</span>
+            <span class="pet-meta-item">📍 Bengaluru</span>
+          </div>
+          <p class="pet-desc">Calm, affectionate, and loves quiet spaces. Luna is perfect for apartment living.</p>
+          <a href="contact.html" class="btn btn-primary adopt-btn">Adopt Me 🐾</a>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <div class="pet-card-img"><span class="pet-tag">Dog</span>🐩</div>
+        <div class="pet-card-body">
+          <div class="pet-name">Max</div>
+          <div class="pet-breed">Indian Spitz</div>
+          <div class="pet-meta">
+            <span class="pet-meta-item">🎂 3 years</span>
+            <span class="pet-meta-item">♂ Male</span>
+            <span class="pet-meta-item">📍 Bengaluru</span>
+          </div>
+          <p class="pet-desc">Playful and smart. Max knows basic commands and loves morning walks.</p>
+          <a href="contact.html" class="btn btn-primary adopt-btn">Adopt Me 🐾</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="pets.html" class="btn btn-outline">View All Pets →</a>
+    </div>
+  </section>
+
+  <!-- WHY ADOPT -->
+  <section class="process-section">
+    <span class="section-paws" style="bottom:1rem;left:3%;">🐶</span>
+    <p class="section-label text-center">Why Choose Adoption</p>
+    <h2 class="section-title text-center">Reasons to Adopt</h2>
+    <p class="section-sub text-center">Choosing adoption over buying makes a huge difference for animals in need.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">💚</span>
+        <div class="why-title">Save a Life</div>
+        <p class="why-desc">Every adoption frees up shelter space and gives an animal a beautiful second chance.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💰</span>
+        <div class="why-title">Cost Effective</div>
+        <p class="why-desc">Adoption is free or low-cost. Pets are often vaccinated and health-checked already.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🐾</span>
+        <div class="why-title">Fight Overpopulation</div>
+        <p class="why-desc">Adoption helps reduce stray animal populations and supports ethical treatment.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤝</span>
+        <div class="why-title">Lifelong Bond</div>
+        <p class="why-desc">Rescued pets form incredibly loyal bonds. They know they've been given a home.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section class="success-section">
+    <p class="section-label text-center">Happy Tails</p>
+    <h2 class="section-title text-center">Success Stories</h2>
+    <p class="section-sub text-center">Real families, real love stories. Here are some of our favourite adoption tales.</p>
+
+    <div class="success-grid">
+      <div class="success-card">
+        <div class="success-img">🐶</div>
+        <div class="success-body">
+          <div class="success-name">Rocky found his family! 🎉</div>
+          <p class="success-story">Rocky was adopted by the Sharma family in March. He now goes on weekend treks and is the star of every family photo!</p>
+        </div>
+      </div>
+      <div class="success-card">
+        <div class="success-img">🐱</div>
+        <div class="success-body">
+          <div class="success-name">Cleo found her person! 💕</div>
+          <p class="success-story">Cleo now lives with Priya, who works from home. They're inseparable — Cleo even sits next to her laptop during meetings.</p>
+        </div>
+      </div>
+      <div class="success-card">
+        <div class="success-img">🐕‍🦺</div>
+        <div class="success-body">
+          <div class="success-name">Buddy is thriving! 🌟</div>
+          <p class="success-story">Buddy was rescued from the streets. After 3 months of care, he was adopted by the Rao family and loves their garden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <p class="section-label text-center">What Adopters Say</p>
+    <h2 class="section-title text-center">Happy Families</h2>
+    <p class="section-sub text-center">Thousands of families found their best friend through PawFinds.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The adoption process was so simple and the team was incredibly supportive. Our dog Bruno has changed our lives!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Ananya Sharma</div>
+            <div class="author-info">Adopted Bruno • Bengaluru</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"PawFinds helped us find Luna. The home check was a nice touch — showed how much they care about the animals."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨</div>
+          <div>
+            <div class="author-name">Rohan Mehta</div>
+            <div class="author-info">Adopted Luna • Bengaluru</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We were nervous first-time pet owners. PawFinds guided us every step of the way. Couldn't be happier!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩‍👧</div>
+          <div>
+            <div class="author-name">Priya Nair</div>
+            <div class="author-info">Adopted Max • Bengaluru</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <p class="section-label" style="color:var(--amber-light);">Ready to change a life?</p>
+    <h2 class="section-title">"Adopt, Don't Shop" 🐾</h2>
+    <p>Thousands of animals are waiting for a second chance. Be the reason a pet smiles today.</p>
+    <a href="pets.html" class="btn btn-primary">Browse All Pets</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Paw<span>Finds</span></a>
+        <p>Connecting loving families with pets who need a second chance. Adopt, don't shop.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon">📘</a>
+          <a href="#" class="social-icon">📸</a>
+          <a href="#" class="social-icon">🐦</a>
+          <a href="#" class="social-icon">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pets.html">Pets Available</a></li>
+          <li><a href="process.html">Adoption Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="#">📧 hello@pawfinds.in</a></li>
+          <li><a href="#">📞 +91 98765 43210</a></li>
+          <li><a href="#">📍 Bengaluru, Karnataka</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PawFinds. All rights reserved.</span>
+      <span class="footer-tagline">🐾 Adopt, Don't Shop</span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+
+    // Staggered card entrance animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = `${(i % 4) * 0.1}s`;
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.pet-card, .why-card, .step-card, .testimonial-card, .success-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.visible').forEach = function() {};
+    const mo = new MutationObserver(() => {});
+
+    // Simplified: just use intersection observer to fade in
+    const cards = document.querySelectorAll('.pet-card, .why-card, .step-card, .testimonial-card, .success-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, idx * 80);
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    cards.forEach(c => cardObserver.observe(c));
+  </script>
+</body>
+</html>
