@@ -397,12 +397,15 @@
     cards.forEach(c => cardObserver.observe(c));
   </script>
   <!-- 🔊 Audio Feature -->
-  <button onclick="playSound()" style="position:fixed; bottom:20px; right:20px; z-index:1000;">
+  <button onclick="playSound()"
+  style="position:fixed; bottom:20px; right:20px; 
+  z-index:1000;">
     🐾 Play Pet Sound
   </button>
 
   <audio id="petAudio">
-    <source src="audio/pet-sound.mp3" type="audio/mpeg">
+    <source src="audio/pet-sound.mp3" type="audio
+      /mpeg">
   </audio>
 
   <script>
